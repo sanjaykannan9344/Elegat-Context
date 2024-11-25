@@ -36,7 +36,7 @@ export default function Cart() {
                   <HiPlusCircle onClick={() => updateItemQuantity(item.id, 1)}>
                     +
                   </HiPlusCircle>
-                  <HiXCircle onClick={() => deleteCart(item.id, 0)}>
+                  <HiXCircle onClick={() => deleteCart(item.id)}>
                     DELETE
                   </HiXCircle>
                 </div>

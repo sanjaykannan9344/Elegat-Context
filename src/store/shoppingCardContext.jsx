@@ -67,22 +67,11 @@ function shoppingCartReducer(state, action) {
   }
 
   if (action.type === "CART-DELETE") {
-    const updateItems = [...state.items];
-
-    const indexToDelete = updateItems.findIndex(
-      (item) => item.id === action.payload.productId
-    );
-
-    if (indexToDelete > -1) {
-      updateItems.splice(indexToDelete, 1);
-    }
-
     return {
       ...state,
-      items: updateItems,
+      items: state.items.filter((item) => item.id === action.payload.productId),
     };
   }
-
   return state;
 }
 
